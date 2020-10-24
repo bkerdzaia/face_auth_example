@@ -6,7 +6,6 @@ COPY package.json /frontapp/
 
 RUN npm install
 
-COPY ./public /frontapp/public
-COPY ./src /frontapp/src
+COPY . /frontapp/
 
 CMD ["npm", "run", "start"]
