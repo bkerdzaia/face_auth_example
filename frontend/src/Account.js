@@ -41,7 +41,7 @@ class Account extends React.Component {
 
             formData.append('file', blob)
         
-            let response = await fetch('/api/users/face/', {
+            let response = await fetch('/api/users/face', {
                 method: 'PUT',
                 headers: {
                      'Authorization': `Bearer ${UserStorage.getToken()}`
