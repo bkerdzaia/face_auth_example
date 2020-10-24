@@ -1,11 +1,12 @@
-FROM node:13.12.0-alpine
+FROM node:alpine
 
-WORKDIR /app
+WORKDIR /frontapp/
 
-COPY package*.json /app/
+COPY package.json /frontapp/
 
 RUN npm install
 
-COPY ./ /app
+COPY ./public /frontapp/public
+COPY ./src /frontapp/src
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
