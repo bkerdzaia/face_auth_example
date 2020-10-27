@@ -8,4 +8,12 @@ RUN npm install
 
 COPY . /frontapp/
 
-CMD ["npm", "run", "start"]
+RUN yarn global add serve-handler http http-proxy
+
+RUN npm run build
+
+COPY ./serve.js /frontapp/build
+
+ENV PORT=${PORT:-3000}
+
+CMD node ./build/serve.js

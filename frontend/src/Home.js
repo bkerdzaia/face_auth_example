@@ -8,7 +8,7 @@ class Home extends React.Component {
     state = { user: { name: '' } }
     
     fetchUser() {
-        fetch('/api/users/me/', {
+        fetch('/api/users/me', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',

@@ -41,4 +41,6 @@ EXPOSE 80
 
 CMD [ "almebic", "upgrade", "head" ]
 
-CMD [ "uvicorn", "--host", "0.0.0.0", "--port", "8000", "app.main:app" ]
+ENV PORT=${PORT:-8000}
+
+CMD uvicorn --host 0.0.0.0 --port $PORT app.main:app

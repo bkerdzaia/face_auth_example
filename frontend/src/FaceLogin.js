@@ -28,7 +28,7 @@ class FaceLogin extends React.Component {
 
             formData.append('file', blob)
         
-            let response = await fetch('/api/login/face-access-token/', {
+            let response = await fetch('/api/login/face-access-token', {
                 method: 'POST',
                 body: formData
             })
